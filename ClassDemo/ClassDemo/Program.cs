@@ -23,7 +23,7 @@ namespace ClassDemo
                 get { return _Sex; }
                 set 
                 {
-                    if (value != "男" || value != "nv")
+                    if (value != "男" && value != "女")
                         _Sex = "男";
                     else
                         _Sex = value;

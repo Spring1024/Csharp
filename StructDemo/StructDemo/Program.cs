@@ -23,7 +23,7 @@ namespace StructDemo
                 get { return _Sex; }
                 set
                 {
-                    if (value != "男" || value != "女")
+                    if (value != "男" && value != "女")
                         _Sex = "男";
                     else
                         _Sex = value;
@@ -40,6 +40,7 @@ namespace StructDemo
                         _Age = 18;
                 }
             }
+            //使用了构造函数，就必须要使用带参构造函数来使用结构体。
             public Student(string name, string sex, int age)
             {
                 _Name = name;
@@ -57,9 +58,13 @@ namespace StructDemo
             stu.Show();
             Console.ReadKey();
 
-            Student stu1;
-            stu1.Name = "spring";
-
+            /*
+             * 使用如下代码即报错
+             *Student stu1;
+             *stu1.Name = "spring";
+             *stu1.Age = 19;
+             *stu1.Sex = "男";
+            */
         }
     }
 }
