@@ -39,11 +39,11 @@ namespace ListBoxDemo
             textBox2.AppendText("这些招式，蔡徐坤全都会！\r\n");
             if (!checkBox1.Checked && listBox1.SelectedItems.Count > 0)
             {
-                textBox2.AppendText("而你会的招式只有：" + listBox1.SelectedItem.ToString()+"\r\n"+"你太菜了！"+"\r\n");
+                textBox2.AppendText("而你会的招式只有：" + listBox1.SelectedItem.ToString()+"\r\n"+"\r\n你太菜了！"+"\r\n");
             }
             else if (!checkBox1.Checked && listBox1.SelectedItems.Count ==0)
             {
-                textBox2.AppendText("而你怎么什么都不会？\r\nhe       tui！");
+                textBox2.AppendText("\r\n而你怎么什么都不会？\r\nhe       tui！");
             }
             else
             {
@@ -53,11 +53,11 @@ namespace ListBoxDemo
                 }
                 if (listBox1.SelectedItems.Count >= 5)
                 {
-                    textBox2.AppendText("你比蔡徐坤还蔡徐坤！");
+                    textBox2.AppendText("\r\n真是太棒了！\r\n你比蔡徐坤还蔡徐坤！");
                 }
                 else
                 {
-                    textBox2.AppendText("你太菜了！\r\n");
+                    textBox2.AppendText("\r\n你太菜了！\r\n");
                 }
             }
         }
@@ -66,5 +66,20 @@ namespace ListBoxDemo
         {
             listBox1.SelectionMode = SelectionMode.MultiSimple;
         }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            Keys k = e.KeyCode;
+            if (k == Keys.F5)
+            {
+                this.Hide();//先隐藏主窗体
+                Form1 form = new Form1();//重新实例化此窗体
+                form.ShowDialog();//以模式窗体的方法重新打开
+                this.Close();//原窗体关闭
+            }
+        }
+
+
+
     }
 }
