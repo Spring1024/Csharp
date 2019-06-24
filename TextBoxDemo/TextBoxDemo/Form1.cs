@@ -109,7 +109,6 @@ namespace TextBoxDemo
             SaveFile();
         }
 
-
         //保存文本文件
         private void SaveFile()
         {
@@ -206,7 +205,14 @@ namespace TextBoxDemo
 
         }
 
+        private void TextBox1_TextChanged_1(object sender, EventArgs e)
+        {
 
-    
+        }
+
+        private void 删除LToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
